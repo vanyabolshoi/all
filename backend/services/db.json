@@ -1,52 +1,5 @@
 {
-  "users": [
-    {
-      "id": "d443",
-      "username": "Vladyslf",
-      "email": "entnxrj@gmail.com",
-      "password": "Dert1234",
-      "dateOfBirth": "February 02, 2025"
-    },
-    {
-      "id": "fb9a",
-      "username": "antonio",
-      "email": "montana@gmail.com",
-      "password": "Dar12345",
-      "selectedDate": "February 02, 2025"
-    },
-    {
-      "id": "4851",
-      "username": "antonio",
-      "email": "montana@gmail.com",
-      "password": "Dar12345",
-      "selectedDate": "February 02, 2025"
-    },
-    {
-      "id": "54bf",
-      "username": "Tyop",
-      "email": "tyor@gmail.com",
-      "password": "Sader123",
-      "selectedDate": "February 02, 2025"
-    },
-    {
-      "id": "f5f4",
-      "email": "montana@gmail.com",
-      "password": "Dar123456"
-    },
-    {
-      "id": "6e4f",
-      "email": "montana@gmail.com",
-      "password": "Dar123456e73"
-    },
-    {
-      "id": "f7ba",
-      "email": "montana@gmail.com",
-      "password": "Dar123456e73"
-    },
-    {
-      "id": "b43c",
-      "email": "montana@gmail.com",
-      "password": "Dar12345"
-    }
-  ]
+  "users": [],
+  "login": [],
+  "videos": []
 }

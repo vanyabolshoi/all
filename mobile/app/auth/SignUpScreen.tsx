@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import { CommonActions } from '@react-navigation/native';
 
+
 import axios from 'axios';
 
 import {
@@ -99,56 +100,56 @@ export default function SignUpScreen({ navigation }: { navigation: any }, width:
         setDatePickerVisibility(false);
     };
     
-    const handleConfirm = (date: any) => {
-        const formattedDate = date.toLocaleDateString('en-US', {
-            day: '2-digit',
-            month: 'long',
-            year: 'numeric',
-        });
-        setSelectedDate(formattedDate);
-        hideDatePicker();
-    };
+    // const handleConfirm = (date: any) => {
+    //     const formattedDate = date.toLocaleDateString('en-US', {
+    //         day: '2-digit',
+    //         month: 'long',
+    //         year: 'numeric',
+    //     });
+    //     setSelectedDate(formattedDate);
+    //     hideDatePicker();
+    // };
 
-    // Функция обработчик отправки формы регистрации, добавить логику отправки данных на сервер
-    // const handleSubmit = () => {
+    // const handleRegistration = async () => { 
     //     if (usernameError || emailError || passwordError || repeatPasswordError) {
     //         Alert.alert('Error', 'Please fix the errors before continuing.');
     //         return;
     //     } else if (!username || !email || !password || !repeatPassword) {
-    //         Alert.alert('Error', 'All fields must be filled.');
+    //         Alert.alert('Error', 'All fields must be filled adi.');
     //         return;
-    //     } else {
-    //         navigation.navigate('Confirmation');
     //     }
-    // };  
 
-    {/* AXIOS TEST API */}
+    // //     try {
+    // //         const response = await axios.post('', {
+    // //             username,
+    // // email,
+    // // password,http://vroom.buhprogsoft.com.ua/users
+    // // dateOfBirth: selectedDate,
+    // //         });
 
-    const handleRegistration = async () => { 
-        if (usernameError || emailError || passwordError || repeatPasswordError) {
-            Alert.alert('Error', 'Please fix the errors before continuing.');
-            return;
-        } else if (!username || !email || !password || !repeatPassword) {
-            Alert.alert('Error', 'All fields must be filled adi.');
-            return;
-        }
+    // //         if (response.status === 201) {
+    // //             Alert.alert('Success', 'You have been registered successfully!');
+    // //             navigation.navigate('Confirmation');
+    // //         }
+    // //     } catch (error) {
+    // //         console.error(error);           
+    // //     }
 
-        try {
-            const response = await axios.post('http://vroom.buhprogsoft.com.ua/users', {
-                username,
-    email,
-    password,
-    dateOfBirth: selectedDate,
-            });
-
-            if (response.status === 201) {
-                Alert.alert('Success', 'You have been registered successfully!');
-                navigation.navigate('Confirmation');
-            }
-        } catch (error) {
-            console.error(error);           
-        }
-    }
+    //     const userData = {
+    //         username,
+    //         email,
+    //         password,
+    //         dateOfBirth: selectedDate,
+    //     };
+        
+    //     try {
+    //         const response = await UserService.register(userData);
+    //         console.log("User registered successfully", response.data);
+    //         navigation.navigate('Confirmation');
+    //     } catch (error) {
+    //         console.error("Registration failed", error);
+    //     }
+    // }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -270,24 +271,10 @@ export default function SignUpScreen({ navigation }: { navigation: any }, width:
                     </TouchableOpacity>
 
                     {/* Модальное окно выбора даты */}
-                    <DateTimePickerModal
-                        isVisible={isDatePickerVisible}
-                        mode="date"
-                        onConfirm={handleConfirm}
-                        onCancel={hideDatePicker}
-                        maximumDate={new Date()}
-                        minimumDate={new Date(1900, 0, 1)}
-                    />
+                   
                 </View>
             </View>
         </View>
-        
-        <TouchableOpacity
-        disabled={!isFormValid}
-        style={[styles.button, { backgroundColor: isFormValid ? '#0EA2DE' : '#E6E6E6' }]}
-        onPress={handleRegistration}>
-            <Text style={[styles.buttonText, { color: isFormValid ? '#FFF' : '#808080' }]}>Continue</Text>
-        </TouchableOpacity>
 
         <Text style={styles.bottomText}>
             Password must be 8-12 characters and contain both numbers and letters/special characters
